@@ -35,6 +35,7 @@ public class ProductServiceImpl implements ProductService {
         return (Product) this.productRepository.findById(productId).map((product) -> {
             product.setName(productDetails.getName());
             product.setDescription(productDetails.getDescription());
+            product.setUrlImage(productDetails.getUrlImage());
             return (Product)this.productRepository.save(product);
         }).orElseThrow(() -> {
             return new ResourceNotFoundException("Product", "Id", productId);

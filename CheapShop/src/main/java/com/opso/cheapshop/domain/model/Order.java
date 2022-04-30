@@ -12,14 +12,14 @@ public class Order {
     private Long id;
 
     @NotNull
-    private  String date;
+    private  String purchase_date;
 
     @NotNull
     private String delivery_address;
 
     @NotNull
     private Double order_amount;
-
+    
     @NotNull
     private String delivery_date;
 
@@ -38,11 +38,11 @@ public class Order {
 //////////////////
 
     public String getDate() {
-        return date;
+        return purchase_date;
     }
 
-    public Order setDate(String date) {
-        this.date = date;
+    public Order setDate(String purchase_date) {
+        this.purchase_date = purchase_date;
         return this;
     }
 

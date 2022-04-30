@@ -11,6 +11,6 @@ public class ProductResource extends AuditModel {
     private String name;
     private Double price;
     private String description;
-
+    private String urlImage;
 
 }

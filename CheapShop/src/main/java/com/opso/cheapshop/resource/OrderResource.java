@@ -9,7 +9,7 @@ import lombok.Setter;
 public class OrderResource extends AuditModel {
 
     private Long id;
-    private String date;
+    private String purchase_date;
     private String delivery_address;
     private String delivery_date;
     private Double order_amount;

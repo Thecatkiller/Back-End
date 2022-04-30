@@ -28,7 +28,19 @@ public class Product extends AuditModel{
     @JoinColumn(name = "supplier_id", nullable = false)
     private Supplier supplier;
 
-
+    @NotNull
+    private String urlImage;
+    
+    
+    public String getUrlImage() {
+    	return urlImage;
+    }
+    
+    public Product setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
+        return this;
+    }    
+    
     public Long getId() {
         return id;
     }

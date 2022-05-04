@@ -7,7 +7,6 @@ import javax.validation.constraints.NotNull;
 @Table(name="products")
 public class Product extends AuditModel{
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,6 +19,15 @@ public class Product extends AuditModel{
 
     @NotNull
     private String description;
+
+    @NotNull
+    private boolean alreadySold;
+
+    @NotNull
+    private int voteCounter;
+
+    @NotNull
+    private int minimumToSold;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "category_id", nullable = false)

@@ -1,6 +1,10 @@
 package com.opso.cheapshop.domain.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -28,11 +32,14 @@ public class User extends AuditModel{
 
     @NotNull
     private String phoneNumber;
+    
+    @NotNull
+    private Double money;
 
     public User() {    }
 
     public User(@NotNull Long id,@NotNull String firstname,@NotNull String lastname,@NotNull Long postalCode,
-                @NotNull String dateOfBirth,@NotNull String address,@NotNull String phoneNumber) {
+                @NotNull String dateOfBirth,@NotNull String address,@NotNull String phoneNumber, @NotNull Double money) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -40,6 +47,7 @@ public class User extends AuditModel{
         this.dateOfBirth = dateOfBirth;
         this.address = address;
         this.phoneNumber = phoneNumber;
+        this.money=money;
     }
 
     public Long getId() {
@@ -104,4 +112,14 @@ public class User extends AuditModel{
         this.phoneNumber = phoneNumber;
         return this;
     }
+    
+    public Double getMoney() {
+        return money;
+    }
+
+    public User setMoney(Double money){
+        this.money = money;
+        return this;
+    }
+    
 }

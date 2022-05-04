@@ -62,8 +62,8 @@ public class OrdersController {
     @PostMapping("/users/{userId}/orders")
     public OrderResource createOrder(@PathVariable Long userId, @Valid @RequestBody SaveOrderResource resource) {
         Order order = convertToEntity(resource);
-        order.setUser(userService.getUserById(userId));
-        return convertToResource(orderService.createOrder(order));
+        //order.setUser(userService.getUserById(userId));
+        return convertToResource(orderService.createOrder(order, userId));
     }
 
     @Operation(summary = "Update Order", description = "Update Order by Id", tags = {"orders"})

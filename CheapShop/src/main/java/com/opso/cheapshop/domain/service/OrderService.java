@@ -11,11 +11,12 @@ public interface OrderService {
 
     Order getOrderById(Long orderId);
 
-    Order createOrder(Order order);
+    Order createOrder(Order order, Long userId);
 
     Order updateOrder(Long orderId, Order order);
 
     ResponseEntity<?> deleteOrder(Long orderId);
 
     Page<Order> getAllOrdersByUserId(Long userId, Pageable pageable);
+
 }

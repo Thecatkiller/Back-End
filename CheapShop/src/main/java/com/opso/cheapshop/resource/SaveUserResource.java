@@ -1,6 +1,7 @@
 package com.opso.cheapshop.resource;
 
 import javax.persistence.Lob;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -34,4 +35,7 @@ public class SaveUserResource {
     @NotNull
     private String phoneNumber;
 
+    @NotNull
+    @Min(0)
+    private double money;
 }

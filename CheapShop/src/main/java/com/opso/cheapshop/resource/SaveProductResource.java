@@ -1,5 +1,6 @@
 package com.opso.cheapshop.resource;
 
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -24,5 +25,14 @@ public class SaveProductResource {
     @Size(max=300)
     private String description;
 
- 
+    @Min(1)
+    @NotNull
+    private int minimumToSold;
+    
+    /*
+    @NotNull
+    private boolean alreadySold;
+     */
+    
+
 }

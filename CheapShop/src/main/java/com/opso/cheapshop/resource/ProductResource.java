@@ -12,5 +12,11 @@ public class ProductResource extends AuditModel {
     private Double price;
     private String description;
     private String urlImage;
-
+    private int voteCounter;
+    private int minimumToSold;
+    /*
+    private boolean alreadySold;
+    */
+    
+    
 }

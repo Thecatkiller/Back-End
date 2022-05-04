@@ -4,17 +4,16 @@ import com.opso.cheapshop.domain.model.AuditModel;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.sql.Timestamp;
+
 @Getter
 @Setter
-public class OrderResource extends AuditModel {
+public class OrderResource {
 
     private Long id;
-    private String purchase_date;
+    private Timestamp purchase_date;
     private String delivery_address;
     private String delivery_date;
-    private Double order_amount;
-
-
-
+    private int quantity;
 
 }

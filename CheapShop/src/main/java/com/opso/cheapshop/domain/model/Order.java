@@ -1,10 +1,30 @@
 package com.opso.cheapshop.domain.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.sql.Timestamp;
 
 @Entity
 @Table(name="orders")
+@Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Order {
 
     @Id
@@ -12,13 +32,13 @@ public class Order {
     private Long id;
 
     @NotNull
-    private  String purchase_date;
+    private Timestamp purchase_date;
 
     @NotNull
     private String delivery_address;
 
     @NotNull
-    private Double order_amount;
+    private int quantity;
     
     @NotNull
     private String delivery_date;
@@ -27,61 +47,9 @@ public class Order {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    public Long getId() {
-        return id;
-    }
-
-    public Order setId(Long id) {
-        this.id = id;
-        return this;
-    }
-//////////////////
-
-    public String getDate() {
-        return purchase_date;
-    }
-
-    public Order setDate(String purchase_date) {
-        this.purchase_date = purchase_date;
-        return this;
-    }
-
-    public String getDeliveryAddress() {
-        return delivery_address;
-    }
-
-    public Order setDeliveryAddress(String delivery_address) {
-        this.delivery_address = delivery_address;
-        return this;
-    }
-
-    public Double getOrderAmount() {
-        return order_amount;
-    }
-
-    public Order setOrderAmount(Double order_amount) {
-        this.order_amount = order_amount;
-        return this;
-    }
-
-    public String getDeliveryDate() {
-        return delivery_date;
-    }
-
-    public Order setDeliveryDate(String delivery_date) {
-        this.delivery_date = delivery_date;
-        return this;
-    }
-
-
-    public User getUser() {
-        return user;
-    }
-
-    public Order setUser(User user) {
-        this.user = user;
-        return this;
-    }
-
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
+      
 
 }

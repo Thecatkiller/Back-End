@@ -23,5 +23,6 @@ public class SaveSupplierResource {
     @NotNull
     private Long number;
 
-
+    @NotNull
+    private String name;
 }

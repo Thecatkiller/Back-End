@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class UserResource extends AuditModel {
+public class UserResource {
 
     private Long id;
     private String firstname;
@@ -16,6 +16,6 @@ public class UserResource extends AuditModel {
     private String dateOfBirth;
     private String address;
     private String phoneNumber;
-
+    private double money;
 
 }

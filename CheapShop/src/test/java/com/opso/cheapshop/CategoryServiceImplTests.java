@@ -2,7 +2,6 @@ package com.opso.cheapshop;
 
 import com.opso.cheapshop.domain.model.Category;
 import com.opso.cheapshop.domain.repository.CategoryRepository;
-import com.opso.cheapshop.domain.repository.ProductRepository;
 import com.opso.cheapshop.domain.service.CategoryService;
 import com.opso.cheapshop.service.CategoryServiceImpl;
 import org.assertj.core.api.AssertionsForClassTypes;
@@ -25,8 +24,6 @@ import static org.mockito.Mockito.when;
 public class CategoryServiceImplTests {
     @MockBean
     private CategoryRepository categoryRepository;
-    @MockBean
-    private ProductRepository productRepository;
     @Autowired
     private CategoryService categoryService;
 

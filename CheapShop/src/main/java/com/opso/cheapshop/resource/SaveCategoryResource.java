@@ -20,5 +20,12 @@ public class SaveCategoryResource {
     @Size(max = 250)
     private String description;
 
+    
+    @NotNull
+    @NotBlank
+    @Size(max = 250)
+    private String url_image;
+
+    
 
 }

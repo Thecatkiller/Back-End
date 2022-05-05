@@ -8,5 +8,5 @@ public class CategoryResource {
     private Long id;
     private String name;
     private String description;
-
+    private String url_image;
 }

@@ -16,7 +16,18 @@ public class Category extends AuditModel{
 
     @NotNull
     private String description;
+    
+    @NotNull
+    private String url_image;
+    
+    public String getUrlImage() {
+        return url_image;
+    }
 
+    public Category setrl_image(String url_image) {
+        this.url_image = url_image;
+        return this;
+    }
 
     public Category() {
     }

@@ -22,18 +22,17 @@ import java.time.Instant;
 @Service
 @Slf4j
 public class OrderServiceImpl implements OrderService {
-
-	private final OrderRepository orderRepository;
-	private final UserService userService;
-	private final ProductService productService;
-
+	
 	@Autowired
-	public OrderServiceImpl(OrderRepository orderRepository, UserService userService, ProductService productService) {
-		this.orderRepository = orderRepository;
-		this.userService = userService;
-		this.productService = productService;
-	}
+	private  OrderRepository orderRepository;
+	
+	@Autowired
+	private  UserService userService;
+	
+	@Autowired
+	private  ProductService productService;
 
+	
 
 	public Page<Order> getAllOrders(Pageable pageable) {
 		return this.orderRepository.findAll(pageable);

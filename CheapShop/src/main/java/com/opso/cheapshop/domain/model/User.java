@@ -121,5 +121,7 @@ public class User extends AuditModel{
         this.money = money;
         return this;
     }
+
+	
     
 }

@@ -51,5 +51,33 @@ public class Order {
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
       
+    public Long getId() {
+        return id;
+    }
+
+    public Order setId(Long id) {
+        this.id = id;
+        return this;
+    }
+    public Order setQuantity(int quantity) {
+        this.quantity = quantity;
+        return this;
+    }
+    
+    public Order setDelivery_date(String delivery_date) {
+        this.delivery_date = delivery_date;
+        return this;
+    }
+    
+    public Order setUserId(User user) {
+        this.user = user;
+        return this;
+    }
+    
+    public Order setProductId(Product product) {
+        this.product = product;
+        return this;
+    }
+    
 
 }
